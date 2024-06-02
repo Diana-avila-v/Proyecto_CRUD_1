@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="gradient-background py-5 text-center">
+  <div class="container">
+    <div class="poetsen-one-regular title mb-4">{{ title2 }}</div>
+    <div class="poetsen-one-regular title mb-4">{{ title3 }}</div>
+    <h3 class="mb-5">Variedad de Opciones</h3>
+    <div class="row">
+      <div class="card-container">
+        <div class="col-md-3">
+          <div class="card mb-4 shadow-sm">
+            <img
+              src="/media/undraw_undraw_undraw_undraw_undraw_undraw_shopping_bags_2ude_-1-_mnw3_-2-_q7y0_muk6_-2-_l1mh_-2-_m4xj.svg"
+              class="card-img-top" alt="Opción 1">
+            <div class="card-body">
+              <p class="card-title font-weight-bold">INGRESA LOS PRODUCTOS QUE DESEES</p>
+              <a href="{% url 'core:product_list' %}" class="btn btn-light-green">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-4 shadow-sm">
+            <img src="/media/undraw_favourite_item_pcyo.svg" class="card-img-top" alt="Opción 2">
+            <div class="card-body">
+              <p class="card-title font-weight-bold">SE PARTE DE MUCHAS MARCAS Y MAS</p>
+              <a href="{% url 'core:brand_list' %}" class="btn btn-light-green">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-4 shadow-sm">
+            <img src="/media/undraw_mobile_profile_7hvy.svg" class="card-img-top" alt="Opción 3">
+            <div class="card-body">
+              <p class="card-title font-weight-bold">ENCUENTRA MUCHOS PROVEDORES</p>
+              <a href="{% url 'core:supplier_list' %}" class="btn btn-light-green">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-4 shadow-sm">
+            <img src="/media/undraw_photo_session_re_c0cp.svg" class="card-img-top" alt="Opción 4">
+            <div class="card-body">
+              <p class="card-title font-weight-bold">ELEGI LA CATEGORIA QUE DESEES</p>
+              <a href="{% url 'core:category_list' %}" class="btn btn-light-green">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3 class="mb-5">Variedad de Productos Y Objetos Para El Hogar</h3>
+    <div class="card-container">
+      <!-- Contenido de las siguientes cuatro tarjetas -->
+      <div class="card mb-4 shadow-sm">
+        <img src="/media/julia-zolotova-M_xIaxQE3Ms-unsplash.jpg" class="card-img-top" alt="Producto 1">
+        <div class="card-body">
+          <p class="card-title font-weight-bold">FRUTAS DE NATURALES</p>
+          <a href="{% url 'core:product_list' %}" class="btn btn-light-green">Ver Detalles</a>
+        </div>
+      </div>
+      <div class="card mb-4 shadow-sm">
+        <img src="/media/mary-winchester-ax9t3CsGwqc-unsplash.jpg" class="card-img-top" alt="Producto 2">
+        <div class="card-body">
+          <p class="card-title font-weight-bold">TODO TIPO DE CARNE</p>
+          <a href="{% url 'core:product_list' %}" class="btn btn-light-green">Ver Detalles</a>
+        </div>
+      </div>
+      <div class="card mb-4 shadow-sm">
+        <img src="/media/planetcare-23coWmkTNSg-unsplash.jpg" class="card-img-top" alt="Producto 3">
+        <div class="card-body">
+          <p class="card-title font-weight-bold">OBJETOS PARA EL HOGAR</p>
+          <a href="{% url 'core:product_list' %}" class="btn btn-light-green">Ver Detalles</a>
+        </div>
+      </div>
+      <div class="card mb-4 shadow-sm">
+        <img src="/media/jonny-caspari-sQNq223Rr54-unsplash.jpg" class="card-img-top" alt="Producto 4">
+        <div class="card-body">
+          <p class="card-title font-weight-bold">BEBIBAS AL MONTON</p>
+          <a href="{% url 'core:product_list' %}" class="btn btn-light-green">Ver Detalles</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="form-container">
+   <h1 class="title">{{ title2 }}</h1>
+   <h2>¿Desea Eliminar el Producto?
+      <span>{{ product.id }} - {{ product.description }}</span>
+   </h2>
+  <form  method="POST">
+   <div>
+      {% csrf_token %}
+       <button class="btn blue" type="submit">Eliminar</button>
+       <a class="btn red" href="{% url 'core:product_list' %}" >Regresar</a>
+   </div>
+  </form>
+</div>
+{% endblock content %}

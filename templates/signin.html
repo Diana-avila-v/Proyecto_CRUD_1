@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+    <br><br>
+    <div class="login-container">  
+        <img src="/media/undraw_shopping_re_hdd9.svg">
+        <form method="POST" class="login-form">
+            <h1>Iniciar Sesión</h1>
+            {% if error %}
+                <div class="error">{{ error }}</div>
+            {% endif %}
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Iniciar sesión</button>
+            <p>No tienes una cuenta? <a href="{% url 'core:signup' %}">Regístrate aquí</a></p>
+        </form>
+    </div>
+{% endblock content %}

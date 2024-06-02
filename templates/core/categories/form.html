@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="form-container">
+  <h1 class="title">{{ title2 }}</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn blue">Guardar</button>
+    <a href="{% url 'core:category_list' %}" class="btn red">Cancelar</a>
+  </form>
+</div>
+{% endblock content %}

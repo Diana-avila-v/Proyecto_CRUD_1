@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-WdDkE3Qn2d9iQIMehUE+7BjxvxEv7o3Gz1QvqLvBj5oCn4lYFZuxCl6OnQ6yC3cuFUg7Y3j1ukyiUZiCvBbdcQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-DyZ88mC6Up2uqS7AFibKiZIKYH8a2w1xHb0v8zT9tFIc5p5cZxwtOw7bFUgTdj3U" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <title>{% block title %}{{title1}}{% endblock title %} </title>
+</head>
+
+<body>
+  <header id="header">
+    <span class="logo">TeacherCode</span>
+    {% if user.is_authenticated %}
+    <span>| Bienvenido {{user.username}}</span>
+    {% endif %}
+    <nav>
+      <ul class="menu">
+        {% if user.is_authenticated %}
+        <li>
+          <a href="{% url 'home' %}">Inicio</a>
+        </li>
+        <li>
+          <a href="{% url 'core:product_list' %}">Productos</a>
+        </li>
+        <li>
+          <a href="{% url 'core:brand_list' %}">Marcas</a>
+        </li>
+        <li>
+          <a href="{% url 'core:supplier_list' %}">Proveedores</a>
+        </li>
+        <li>
+          <a href="{% url 'core:category_list' %}">Categoria</a>
+        </li>
+        <li>
+          <a href="{% url 'core:signout' %}">
+            Cerrar sesión
+          <i class="fas fa-door-open"></i>
+          </a>
+        </li>
+        {% else %}
+        <li>
+          <a href="{% url 'core:signin' %}">
+            Iniciar sesión</a>
+          <i class="fas fa-user icono-usuario"></i>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+  <main id="content">
+    {% block content %}
+    <h1>{{title2}}</h1>
+    {% endblock content %}
+  </main>
+</body>
+
+</html>

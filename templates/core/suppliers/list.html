@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+   <div class="table-container">
+    <br>
+    <h1 class="poetsen-one-regular title mb-4">{{ title2 }}</h1>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Proveedor</th>
+          <th>Ruc</th>
+          <th>Direccion</th>
+          <th>Telefono</th>
+          <th>Usuario</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+        {% for item in suppliers %}
+          <tr>
+          <td>{{item.name}}</td>
+          <td>{{item.ruc}}</td>
+          <td>{{item.address}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.user}}</td>
+          <td>{% if item.state %}
+               ✔
+              {% else %}
+               ➖
+              {% endif %}
+          </td>
+          <td>
+            <a href={% url 'core:edit_supplier' item.id %}>✏️</a>
+            <a href={% url 'core:delete_supplier' item.id %}>❌</a>
+          </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+     <div class="form-group">
+       <a class="btn blue" href={% url 'core:add_supplier' %}>Agregar Proveedor</a>
+     </div>
+  </div>
+{% endblock content  %}
